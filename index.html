@@ -32,7 +32,7 @@
                     <li class="nav-item"><a class="nav-link" href="./contactus.html"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
                 </ul>
                 <span class="navbar-text">
-                    <a class="btn" data-toggle="modal" data-target="#loginModal">
+                    <a class="btn" id="login-button">
                         <span class="fa fa-sign-in"></span> Login
                     </a>
                 </span>
@@ -151,10 +151,8 @@
                     <img src="img/logo.png" class="img-fluid">
                 </div>
                 <div class="col-6 col-sm-3 align-self-center">
-                    <span data-toggle="modal" data-target="#reserveTableModal">
-                        <a type="button"  class="btn btn-warning" 
-                            data-toggle="tooltip" data-html="true" title="Or call us at <br> <strong>9818278981</strong>"
-                            data-placement="bottom">
+                    <span id="reserve-button">
+                        <a type="button"  class="btn btn-warning"  id="tooltip-button">
                                 Reserve Table
                         </a>
 
@@ -364,7 +362,7 @@
      
      <script>
          $(document).ready(function(){
-             $('[data-toggle="tooltip"]').tooltip();
+            //  $('[data-toggle="tooltip"]').tooltip();
 
              $('#mycarousel').carousel({interval:2000});
 
@@ -389,6 +387,20 @@
 
                  }
              });
+
+             $("#login-button").click(function(){
+                 $("#loginModal").modal("show");
+             });
+
+             $("#reserve-button").click(function(){
+                 $("#reserveTableModal").modal("show");
+             });
+
+             $("#tooltip-button").tooltip({
+                    placement:'bottom',
+                    html: true,
+                    title:"Or call us at <br> <strong>9818278981</strong>"
+                })
          })
      </script>
 </body>
